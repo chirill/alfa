@@ -6,7 +6,7 @@
     <div class="row">
 
 
-        {!! Form::model($post, ['method'=>'PATCH', 'action'=>['AdminPostsController@edit',$post->id],'files'=>true]) !!}
+        {!! Form::model($post, ['method'=>'PATCH', 'action'=> ['AdminPostsController@update', $post->id], 'files'=>true]) !!}
 
         <div class="form-group">
             {!! Form::label('title','Title:') !!}
@@ -15,10 +15,6 @@
         <div class="form-group">
             {!! Form::label('category_id','Category:') !!}
             {!! Form::select('category_id', $categories,null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('user_id','User:') !!}
-            {!! Form::select('user_id',[''=>'options'],null,['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
@@ -32,7 +28,7 @@
             {!! Form::textarea('body',null,['class'=>'form-control','rows'=>3]) !!}
         </div>
         <div class="form-group">
-            {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Update Post',['class'=>'btn btn-primary']) !!}
         </div>
         {!! Form::close() !!}
     </div>
@@ -44,3 +40,4 @@
 
 
 @stop
+
